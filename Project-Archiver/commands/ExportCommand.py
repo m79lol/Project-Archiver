@@ -41,6 +41,8 @@ def export_folder(root_folder, output_folder, file_types, write_version, name_op
                 output_name = get_name(write_version, name_option)
                 export_active_doc(output_folder, file_types, output_name)
 
+                ao.app.activeDocument.close(False)
+
             # TODO add handling
             except ValueError as e:
                 ao.ui.messageBox(str(e))
